@@ -88,11 +88,15 @@ if input('Do you want to use a different dictionary [Y/n] ') =='Y':
     print('Success! Attempting to open file!')
 
 else:
-    print('Downloading default dictionary from the web...')
+    print('Downloading default dictionary from the web by dwyl from GitHub...')
     import urllib.request
     # Download the file from `url` and save it locally under `file_name`:
     urllib.request.urlretrieve('https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt', 'dict.txt')
     print('Success! Attempting to open file!')
+if input('Do you want to enable debugging? [Y/n] ') =='Y':
+  debug = True
+else:
+  debug = False
 
 #Defining random_line to choose a random line drom an unpecified file
 def random_line(fname):
@@ -110,7 +114,9 @@ input('To start game press any key!')
 gamerunning=True
 while gamerunning:
     print (hangman[tries])
-    print(word)
+    if debug :
+      print('DEBUG MODE')
+      print(word)
     current=input('Letter: ')
     if current in cletters and current not in clettersi:
         print ('Yay!')
@@ -125,6 +131,11 @@ while gamerunning:
                 clettersi.append(current)
                 print('You have guessed the letters:')
                 print(*clettersi)
+                if len(clettersi) == wlen:
+                  print ('You have all the letters, now try to guess the word!')
+                  if input('Word: ') == word:
+                      print('You have won!')
+                      gamerunning=False
             else:
                 print ('Nope!')
                 print('You have guessed the letters:')
@@ -149,3 +160,5 @@ while gamerunning:
             print (hangman[tries])
     input('Click any key to continue!')
     os.system('clear')
+    print('You have guessed the letters:')
+    print(*clettersi)
