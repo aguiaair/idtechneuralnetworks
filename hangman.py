@@ -155,7 +155,7 @@ while gamerunning:
             gamerunning=False
     else:
         print ('Nope!')
-        if tries <=4:
+        if tries <=5:
             tries=tries+1
         else:
             gamerunning=False
@@ -165,3 +165,6 @@ while gamerunning:
     os.system('clear')
     print('You have guessed the letters:')
     print(*clettersi)
+    if tries == 6:
+      print (hangman[tries])
+      print('You have lost')
