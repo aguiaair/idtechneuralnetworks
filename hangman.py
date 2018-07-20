@@ -159,7 +159,6 @@ while gamerunning:
             tries=tries+1
         else:
             gamerunning=False
-            print (hangman[tries])
             print('You have lost')
     input('Click any key to continue!')
     os.system('clear')
