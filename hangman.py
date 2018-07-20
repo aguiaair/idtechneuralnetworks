@@ -93,16 +93,14 @@ else:
     # Download the file from `url` and save it locally under `file_name`:
     urllib.request.urlretrieve('https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt', 'dict.txt')
     print('Success! Attempting to open file!')
-if input('Do you want to enable debugging? [Y/n] ') =='Y':
-  debug = True
-else:
-  debug = False
+
 
 #Defining random_line to choose a random line drom an unpecified file
 def random_line(fname):
     lines = open(fname).read().splitlines()
     return random.choice(lines)
 print('Done!')
+
 print('Choosing a random word...')
 word=random_line('dict.txt')
 wlen=len(word)
@@ -110,6 +108,10 @@ cletters=list(word)
 clettersi=[]
 tries=0
 print('Done!')
+if input('Do you want to enable debugging? [Y/n] ') =='Y':
+  debug = True
+else:
+  debug = False
 input('To start game press any key!')
 gamerunning=True
 while gamerunning:
