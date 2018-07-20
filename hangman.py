@@ -2,6 +2,7 @@
 import random
 import time
 import numpy as np
+import os
 chars = "abcdefghijklmnopqrstuvwxyz"
 
 
@@ -147,3 +148,4 @@ while gamerunning:
             gamerunning=False
             print (hangman[tries])
     input('Click any key to continue!')
+    os.system('clear')
