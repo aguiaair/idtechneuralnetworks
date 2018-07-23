@@ -1,10 +1,9 @@
 #%%
 import random
-import time
-import numpy as np
 import os
 chars = "abcdefghijklmnopqrstuvwxyz"
 
+def cls():os.system('cls' if os.name=='nt' else 'clear')
 
 
 hangman = ['''
@@ -161,7 +160,7 @@ while gamerunning:
             gamerunning=False
             print('You have lost')
     input('Click any key to continue!')
-    os.system('clear')
+    cls()
     print('You have guessed the letters:')
     print(*clettersi)
     if tries == 6:
