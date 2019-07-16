@@ -113,6 +113,7 @@ else:
   debug = False
 input('To start game press any key!')
 gamerunning=True
+cls()
 while gamerunning:
     print (hangman[tries])
     if debug :
